@@ -3,6 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Phone, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import headerLogo from "@assets/logo.png_1772902642052.webp";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -21,15 +22,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4 h-20">
           <Link href="/" data-testid="link-home-logo">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-md gold-gradient flex items-center justify-center">
-                <span className="text-background font-serif font-bold text-lg">P</span>
-              </div>
-              <div className="hidden sm:block">
-                <p className="font-serif text-lg font-semibold tracking-wide text-foreground leading-tight">Prestige</p>
-                <p className="text-[10px] uppercase tracking-[0.3em] text-primary font-medium">Limousines</p>
-              </div>
-            </div>
+            <img src={headerLogo} alt="Prestige Limousines" className="h-14 w-auto" />
           </Link>
 
           <div className="hidden lg:flex items-center gap-1">

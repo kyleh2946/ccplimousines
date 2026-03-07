@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import footerLogo from "@assets/footer-image1.png_1772902642051.webp";
 
 export function Footer() {
   return (
@@ -7,14 +8,8 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-md gold-gradient flex items-center justify-center">
-                <span className="text-background font-serif font-bold text-lg">P</span>
-              </div>
-              <div>
-                <p className="font-serif text-lg font-semibold tracking-wide text-foreground leading-tight">Prestige</p>
-                <p className="text-[10px] uppercase tracking-[0.3em] text-primary font-medium">Limousines</p>
-              </div>
+            <div className="mb-6">
+              <img src={footerLogo} alt="Prestige Limousines" className="h-20 w-auto" />
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Over 20 years of luxury transport excellence on the Central Coast. Your journey, our passion.
