@@ -5,6 +5,10 @@ import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import { ArrowRight, Users, Snowflake, Wifi, Music, Shield, Star } from "lucide-react";
 import { usePageMeta } from "@/hooks/use-page-meta";
+import mercedesImg from "@assets/mercedes-benz-e250_1773074645042.jpg";
+import stretchLimoImg from "@assets/stretch-limo-ba-falcon.jpg_1773074645046.webp";
+import vwMultivanImg from "@assets/VW-multivan.jpg_1773074645048.webp";
+import chryslerImg from "@assets/Chrysler-10-Seat_1773074645049.jpg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -13,31 +17,40 @@ const fadeUp = {
 
 const vehicles = [
   {
-    name: "Mercedes-Benz E-Class",
+    name: "Mercedes-Benz E250",
     category: "Luxury Sedan",
-    image: "/images/fleet-sedan.jpg",
+    image: mercedesImg,
     capacity: "1-3 Passengers",
-    description: "The ultimate in executive comfort. Our Mercedes-Benz E-Class sedans feature premium leather interiors, climate control, and a whisper-quiet ride perfect for corporate transfers and airport runs.",
+    description: "The ultimate in executive comfort. Our Mercedes-Benz E250 features a premium leather interior, climate control, and a whisper-quiet ride perfect for corporate transfers and airport runs.",
     features: ["Leather Interior", "Climate Control", "USB Charging", "Tinted Windows"],
     ideal: ["Corporate Travel", "Airport Transfers", "Date Night"],
   },
   {
-    name: "Chrysler 300C Stretch",
+    name: "BA Falcon Stretch Limousine",
     category: "Stretch Limousine",
-    image: "/images/fleet-stretch.jpg",
+    image: stretchLimoImg,
     capacity: "6-10 Passengers",
-    description: "Make a statement with our stunning stretch limousine. Featuring a luxurious interior with ambient lighting, premium sound system, and a bar area, this vehicle turns every journey into an event.",
+    description: "Make a grand entrance with our stunning white stretch limousine. Featuring a spacious interior with ambient lighting, premium sound system, and a bar area — perfect for turning every journey into an unforgettable event.",
     features: ["Bar Area", "Ambient Lighting", "Premium Sound", "Privacy Partition"],
     ideal: ["Weddings", "School Formals", "Parties", "Special Events"],
   },
   {
-    name: "Range Rover Vogue",
-    category: "Premium SUV",
-    image: "/images/fleet-suv.jpg",
-    capacity: "1-4 Passengers",
-    description: "Commanding presence meets refined luxury. Our Range Rover Vogue provides elevated comfort with panoramic views, heated seats, and the versatility to handle any terrain or occasion.",
-    features: ["Heated Seats", "Panoramic Roof", "All-Terrain", "Generous Boot"],
-    ideal: ["Hunter Valley Tours", "VIP Transport", "Special Events"],
+    name: "Chrysler 300C 10-Seat Stretch",
+    category: "Stretch Limousine",
+    image: chryslerImg,
+    capacity: "Up to 10 Passengers",
+    description: "Our showpiece Chrysler 300C stretch limousine combines bold styling with opulent comfort. With seating for up to 10 passengers, chrome detailing, and a fully appointed interior, this is the ultimate vehicle for making a statement.",
+    features: ["Chrome Detailing", "Ambient Lighting", "Premium Sound", "Bar Area"],
+    ideal: ["Weddings", "Formals", "Parties", "VIP Events"],
+  },
+  {
+    name: "Volkswagen Multivan",
+    category: "Premium People Mover",
+    image: vwMultivanImg,
+    capacity: "Up to 7 Passengers",
+    description: "Versatile luxury for group travel. Our Volkswagen Multivan offers spacious seating, a refined ride, and generous luggage room — ideal for airport transfers, corporate groups, or wine tours through the Hunter Valley.",
+    features: ["Spacious Cabin", "Climate Control", "Generous Luggage Space", "Sliding Doors"],
+    ideal: ["Airport Transfers", "Group Travel", "Hunter Valley Tours", "Cruise Transfers"],
   },
 ];
 
@@ -47,7 +60,7 @@ export default function Fleet() {
     <div className="min-h-screen pt-20">
       <section className="relative py-24" data-testid="section-fleet-hero">
         <div className="absolute inset-0">
-          <img src="/images/fleet-sedan.jpg" alt="Luxury fleet" className="w-full h-full object-cover" />
+          <img src={chryslerImg} alt="Luxury fleet" className="w-full h-full object-cover" />
           <div className="hero-overlay absolute inset-0" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
