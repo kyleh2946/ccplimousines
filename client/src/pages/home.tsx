@@ -21,6 +21,11 @@ import chryslerImg from "@assets/Chrysler-10-Seat_1773074645049.jpg";
 import mercedesImg from "@assets/mercedes-benz-e250_1773074645042.jpg";
 import stretchLimoImg from "@assets/stretch-limo-ba-falcon.jpg_1773074645046.webp";
 import vwMultivanImg from "@assets/VW-multivan.jpg_1773074645048.webp";
+import heroBannerImg from "@assets/generated_images/hero-banner.png";
+import serviceWeddingImg from "@assets/generated_images/service-wedding.png";
+import serviceAirportImg from "@assets/generated_images/service-airport.png";
+import serviceCorporateImg from "@assets/generated_images/service-corporate.png";
+import serviceCruiseImg from "@assets/generated_images/service-cruise.png";
 
 const features = [
   "Fast, prompt, efficient and always on time",
@@ -35,25 +40,25 @@ const services = [
     icon: Car,
     title: "Wedding Limousines",
     description: "Make your special day unforgettable with our luxurious wedding fleet. Elegance and style from start to finish.",
-    image: chryslerImg,
+    image: serviceWeddingImg,
   },
   {
     icon: Plane,
     title: "Airport Transfers",
     description: "Seamless airport shuttle services to Sydney Domestic and International terminals. Reliable and punctual.",
-    image: mercedesImg,
+    image: serviceAirportImg,
   },
   {
     icon: Users,
     title: "Corporate Travel",
     description: "Impress clients and colleagues with our premium corporate transport. Professional chauffeurs at your service.",
-    image: vwMultivanImg,
+    image: serviceCorporateImg,
   },
   {
     icon: Ship,
     title: "Cruise Transfers",
     description: "Door-to-port luxury transport for all major cruise terminals. Start your voyage in comfort and style.",
-    image: stretchLimoImg,
+    image: serviceCruiseImg,
   },
 ];
 
@@ -98,8 +103,8 @@ export default function Home() {
       <section className="relative min-h-[90vh] flex items-center" data-testid="section-hero">
         <div className="absolute inset-0">
           <img
-            src={chryslerImg}
-            alt="Chrysler 300C Stretch Limousine"
+            src={heroBannerImg}
+            alt="Luxury limousine"
             className="w-full h-full object-cover"
           />
           <div className="hero-overlay absolute inset-0" />
