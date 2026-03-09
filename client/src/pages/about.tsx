@@ -143,9 +143,9 @@ export default function About() {
           </div>
 
           <div className="text-center mt-12">
-            <Link href="/contact">
+            <Link href="/book">
               <Button data-testid="button-about-cta">
-                Get in Touch
+                Book Now
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </Link>

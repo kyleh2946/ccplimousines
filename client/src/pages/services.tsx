@@ -116,9 +116,9 @@ export default function Services() {
                         </div>
                       ))}
                     </div>
-                    <Link href="/contact">
+                    <Link href="/book">
                       <Button variant="outline" data-testid={`button-service-enquire-${i}`}>
-                        Enquire Now
+                        Book Now
                         <ArrowRight className="w-4 h-4 ml-2" />
                       </Button>
                     </Link>
@@ -139,9 +139,9 @@ export default function Services() {
               You can trust our straightforward pricing policy. With no hidden charges, our prices reflect our commitment to providing value without compromising on quality. Contact us for a personalised quote.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link href="/contact">
+              <Link href="/book">
                 <Button data-testid="button-services-quote">
-                  Get a Free Quote
+                  Book Now
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </Link>

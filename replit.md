@@ -1,14 +1,15 @@
 # Prestige Limousines - Central Coast
 
 ## Overview
-A luxury limousine hire company website for Central Coast, NSW, Australia. Features a dark, premium theme with gold accents. Multi-page marketing site with contact form functionality.
+A luxury limousine hire company website for Central Coast, NSW, Australia. Features a dark, premium theme with gold accents. Multi-page marketing site with online booking integration and contact form.
 
 ## Pages
-- **Home** (`/`) - Hero with contact form, services overview, fleet preview, testimonials, CTA
+- **Home** (`/`) - Hero with CTA, services overview, fleet preview, testimonials
 - **About** (`/about`) - Company story, values, stats
 - **Services** (`/services`) - Wedding limos, airport transfers, corporate, cruise, events, formals
-- **Fleet** (`/fleet`) - Vehicle showcase with features and specs
+- **Fleet** (`/fleet`) - Vehicle showcase (Mercedes-Benz E250, BA Falcon Stretch, Chrysler 300C, VW Multivan)
 - **Contact** (`/contact`) - Full contact form with company info
+- **Book** (`/book`) - Embedded online reservation widget (mylimobiz.com)
 
 ## Tech Stack
 - Frontend: React + Vite + TypeScript + Tailwind CSS + shadcn/ui
@@ -16,6 +17,7 @@ A luxury limousine hire company website for Central Coast, NSW, Australia. Featu
 - Routing: wouter
 - Animations: framer-motion
 - Forms: react-hook-form + zod validation
+- Booking: External widget from book.mylimobiz.com (dcetrans)
 
 ## Database
 - `contact_inquiries` table stores form submissions (fullName, email, phone, message)
@@ -34,4 +36,10 @@ A luxury limousine hire company website for Central Coast, NSW, Australia. Featu
 - `client/src/hooks/` - Custom hooks (use-page-meta, use-toast)
 - `server/` - Express backend with routes and storage
 - `shared/schema.ts` - Database schema and validation
-- `client/public/images/` - Stock photography assets
+- `attached_assets/` - Source images (not served directly; imported via @assets alias)
+
+## Booking Integration
+- All "Book Now" buttons across the site link to `/book`
+- The booking page embeds the mylimobiz.com reservation widget via external script
+- Widget script: https://book.mylimobiz.com/v4/widgets.js
+- Widget alias: dcetrans

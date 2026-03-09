@@ -10,6 +10,7 @@ import About from "@/pages/about";
 import Services from "@/pages/services";
 import Fleet from "@/pages/fleet";
 import Contact from "@/pages/contact";
+import Book from "@/pages/book";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -20,6 +21,7 @@ function Router() {
       <Route path="/services" component={Services} />
       <Route path="/fleet" component={Fleet} />
       <Route path="/contact" component={Contact} />
+      <Route path="/book" component={Book} />
       <Route component={NotFound} />
     </Switch>
   );

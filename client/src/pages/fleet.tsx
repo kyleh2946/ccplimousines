@@ -126,9 +126,9 @@ export default function Fleet() {
                       </div>
                     </div>
 
-                    <Link href="/contact">
+                    <Link href="/book">
                       <Button data-testid={`button-enquire-vehicle-${i}`}>
-                        Enquire About This Vehicle
+                        Book This Vehicle
                         <ArrowRight className="w-4 h-4 ml-2" />
                       </Button>
                     </Link>
@@ -186,7 +186,7 @@ export default function Fleet() {
               Contact us to discuss your requirements and we'll help you select the perfect vehicle for your occasion.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link href="/contact">
+              <Link href="/book">
                 <Button data-testid="button-fleet-contact">
                   Book Now
                   <ArrowRight className="w-4 h-4 ml-2" />

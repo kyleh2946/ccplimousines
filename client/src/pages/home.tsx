@@ -1,15 +1,6 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { insertContactInquirySchema, type InsertContactInquiry } from "@shared/schema";
-import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
-import { useToast } from "@/hooks/use-toast";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { motion } from "framer-motion";
 import {
@@ -97,24 +88,6 @@ const fadeUp = {
 
 export default function Home() {
   usePageMeta("Prestige Limousines | Luxury Limo Hire Central Coast", "Central Coast's premier limousine and hire car service. Weddings, corporate transfers, airport shuttles and more.");
-  const { toast } = useToast();
-  const form = useForm<InsertContactInquiry>({
-    resolver: zodResolver(insertContactInquirySchema),
-    defaultValues: { fullName: "", email: "", phone: "", message: "" },
-  });
-
-  const mutation = useMutation({
-    mutationFn: async (data: InsertContactInquiry) => {
-      await apiRequest("POST", "/api/contact", data);
-    },
-    onSuccess: () => {
-      toast({ title: "Message Sent", description: "We'll be in touch shortly." });
-      form.reset();
-    },
-    onError: () => {
-      toast({ title: "Error", description: "Something went wrong. Please try again.", variant: "destructive" });
-    },
-  });
 
   return (
     <div className="min-h-screen">
@@ -129,115 +102,47 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-32">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={{
-                hidden: {},
-                visible: { transition: { staggerChildren: 0.1 } },
-              }}
-            >
-              <motion.p variants={fadeUp} className="text-primary font-medium tracking-[0.2em] uppercase text-sm mb-4">
-                Leaders in Personal Transport
-              </motion.p>
-              <motion.h1 variants={fadeUp} className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8">
-                Luxury{" "}
-                <span className="gold-text">Limousine</span>{" "}
-                Hire
-              </motion.h1>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.1 } },
+            }}
+            className="max-w-2xl"
+          >
+            <motion.p variants={fadeUp} className="text-primary font-medium tracking-[0.2em] uppercase text-sm mb-4">
+              Leaders in Personal Transport
+            </motion.p>
+            <motion.h1 variants={fadeUp} className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-8">
+              Luxury{" "}
+              <span className="gold-text">Limousine</span>{" "}
+              Hire
+            </motion.h1>
 
-              <motion.ul variants={fadeUp} className="space-y-3 mb-10">
-                {features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                    <span className="text-white/80 text-sm">{feature}</span>
-                  </li>
-                ))}
-              </motion.ul>
+            <motion.ul variants={fadeUp} className="space-y-3 mb-10">
+              {features.map((feature) => (
+                <li key={feature} className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                  <span className="text-white/80 text-sm">{feature}</span>
+                </li>
+              ))}
+            </motion.ul>
 
-              <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-4">
-                <Link href="/contact">
-                  <Button size="lg" data-testid="button-hero-book">
-                    Book Your Ride
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
-                </Link>
-                <a href="tel:0417024271">
-                  <Button size="lg" variant="outline" data-testid="button-hero-call" className="bg-white/5 backdrop-blur-sm border-white/20 text-white">
-                    Call 0417 024 271
-                  </Button>
-                </a>
-              </motion.div>
+            <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-4">
+              <Link href="/book">
+                <Button size="lg" data-testid="button-hero-book">
+                  Book Your Ride
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </Link>
+              <a href="tel:0417024271">
+                <Button size="lg" variant="outline" data-testid="button-hero-call" className="bg-white/5 backdrop-blur-sm border-white/20 text-white">
+                  Call 0417 024 271
+                </Button>
+              </a>
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="hidden lg:block"
-            >
-              <Card className="p-8 bg-card/90 backdrop-blur-md border-border/50">
-                <h2 className="font-serif text-2xl font-semibold mb-2 text-foreground" data-testid="text-contact-form-title">Get in Touch</h2>
-                <p className="text-muted-foreground text-sm mb-6">Need a ride? Fill out the form and we'll call you back.</p>
-                <Form {...form}>
-                  <form onSubmit={form.handleSubmit((data) => mutation.mutate(data))} className="space-y-4">
-                    <FormField
-                      control={form.control}
-                      name="fullName"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormControl>
-                            <Input placeholder="Full Name" {...field} data-testid="input-fullname" />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
-                      name="email"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormControl>
-                            <Input placeholder="Email" type="email" {...field} data-testid="input-email" />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
-                      name="phone"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormControl>
-                            <Input placeholder="Phone" type="tel" {...field} data-testid="input-phone" />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
-                      name="message"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormControl>
-                            <Textarea placeholder="Tell us about your event or booking needs..." rows={3} {...field} data-testid="input-message" />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <Button type="submit" className="w-full" disabled={mutation.isPending} data-testid="button-submit-contact">
-                      {mutation.isPending ? "Sending..." : "Get in Touch"}
-                    </Button>
-                  </form>
-                </Form>
-              </Card>
-            </motion.div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -478,7 +383,7 @@ export default function Home() {
               Step into the world of Prestige Limousines and experience transport like never before. We promise not just a service but a memorable part of your special occasions.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Link href="/contact">
+              <Link href="/book">
                 <Button size="lg" data-testid="button-cta-book">
                   Book Now
                   <ArrowRight className="w-4 h-4 ml-2" />

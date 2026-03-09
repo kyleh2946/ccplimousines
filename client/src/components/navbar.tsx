@@ -50,7 +50,7 @@ export function Navbar() {
               <Phone className="w-4 h-4" />
               <span>0417 024 271</span>
             </a>
-            <Link href="/contact">
+            <Link href="/book">
               <Button data-testid="button-book-now" className="hidden sm:inline-flex">
                 Book Now
               </Button>
