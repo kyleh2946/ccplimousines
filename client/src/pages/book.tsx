@@ -12,7 +12,7 @@ export default function Book() {
 
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = "https://book.mylimobiz.com/v4/widgets.js";
+    script.src = "https://book.mylimobiz.com/v4/widgets/widget-loader.js";
     script.async = true;
     document.body.appendChild(script);
     return () => {
