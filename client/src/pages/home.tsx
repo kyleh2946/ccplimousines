@@ -17,6 +17,10 @@ import {
   Quote,
 } from "lucide-react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import chryslerImg from "@assets/Chrysler-10-Seat_1773074645049.jpg";
+import mercedesImg from "@assets/mercedes-benz-e250_1773074645042.jpg";
+import stretchLimoImg from "@assets/stretch-limo-ba-falcon.jpg_1773074645046.webp";
+import vwMultivanImg from "@assets/VW-multivan.jpg_1773074645048.webp";
 
 const features = [
   "Fast, prompt, efficient and always on time",
@@ -31,25 +35,25 @@ const services = [
     icon: Car,
     title: "Wedding Limousines",
     description: "Make your special day unforgettable with our luxurious wedding fleet. Elegance and style from start to finish.",
-    image: "/images/service-wedding.jpg",
+    image: chryslerImg,
   },
   {
     icon: Plane,
     title: "Airport Transfers",
     description: "Seamless airport shuttle services to Sydney Domestic and International terminals. Reliable and punctual.",
-    image: "/images/service-airport.jpg",
+    image: mercedesImg,
   },
   {
     icon: Users,
     title: "Corporate Travel",
     description: "Impress clients and colleagues with our premium corporate transport. Professional chauffeurs at your service.",
-    image: "/images/service-corporate.jpg",
+    image: vwMultivanImg,
   },
   {
     icon: Ship,
     title: "Cruise Transfers",
     description: "Door-to-port luxury transport for all major cruise terminals. Start your voyage in comfort and style.",
-    image: "/images/service-cruise.jpg",
+    image: stretchLimoImg,
   },
 ];
 
@@ -94,8 +98,8 @@ export default function Home() {
       <section className="relative min-h-[90vh] flex items-center" data-testid="section-hero">
         <div className="absolute inset-0">
           <img
-            src="/images/hero-limo.jpg"
-            alt="Luxury limousine"
+            src={chryslerImg}
+            alt="Chrysler 300C Stretch Limousine"
             className="w-full h-full object-cover"
           />
           <div className="hero-overlay absolute inset-0" />
@@ -225,7 +229,7 @@ export default function Home() {
 
       <section className="relative py-24" data-testid="section-about-preview">
         <div className="absolute inset-0">
-          <img src="/images/interior.jpg" alt="Luxury interior" className="w-full h-full object-cover" />
+          <img src={stretchLimoImg} alt="BA Falcon Stretch Limousine" className="w-full h-full object-cover" />
           <div className="section-overlay absolute inset-0" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -264,8 +268,8 @@ export default function Home() {
             >
               <div className="relative">
                 <img
-                  src="/images/chauffeur.jpg"
-                  alt="Professional chauffeur"
+                  src={mercedesImg}
+                  alt="Mercedes-Benz E250"
                   className="rounded-md w-full h-[400px] object-cover"
                 />
                 <div className="absolute -bottom-6 -left-6 bg-card p-6 rounded-md border border-border/50">
@@ -290,9 +294,9 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { name: "Luxury Sedan", desc: "Mercedes-Benz E-Class", image: "/images/fleet-sedan.jpg", capacity: "1-3 passengers" },
-              { name: "Stretch Limousine", desc: "Chrysler 300C Stretch", image: "/images/fleet-stretch.jpg", capacity: "6-10 passengers" },
-              { name: "Premium SUV", desc: "Range Rover Vogue", image: "/images/fleet-suv.jpg", capacity: "1-4 passengers" },
+              { name: "Mercedes-Benz E250", desc: "Luxury Sedan", image: mercedesImg, capacity: "1-3 passengers" },
+              { name: "Chrysler 300C Stretch", desc: "10-Seat Limousine", image: chryslerImg, capacity: "Up to 10 passengers" },
+              { name: "VW Multivan", desc: "Premium People Mover", image: vwMultivanImg, capacity: "Up to 7 passengers" },
             ].map((vehicle, i) => (
               <motion.div
                 key={vehicle.name}
