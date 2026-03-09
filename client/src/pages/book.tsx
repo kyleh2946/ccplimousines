@@ -8,7 +8,12 @@ const fadeUp = {
 };
 
 export default function Book() {
-  usePageMeta("Book Online | Prestige Limousines", "Make an online reservation for luxury limousine hire on the Central Coast.");
+  usePageMeta({
+    title: "Book Online | Limousine Hire Central Coast NSW | Prestige Limousines",
+    description: "Book your luxury limousine online. Easy online reservations for wedding limos, airport transfers, corporate travel and more on the Central Coast NSW. Instant availability and confirmation.",
+    keywords: "book limousine online central coast, limo reservation nsw, online booking limousine hire gosford, book wedding limo central coast, reserve airport transfer central coast",
+    canonical: "https://prestigelimousines.com.au/book",
+  });
 
   useEffect(() => {
     const script = document.createElement("script");

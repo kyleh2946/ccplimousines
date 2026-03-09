@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { ArrowRight, Car, Plane, Users, Ship, PartyPopper, GraduationCap, Sparkles } from "lucide-react";
 import { usePageMeta } from "@/hooks/use-page-meta";
+import { useServiceSchema } from "@/components/structured-data";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -56,7 +57,16 @@ const services = [
 ];
 
 export default function Services() {
-  usePageMeta("Our Services | Prestige Limousines", "Wedding limos, airport transfers, corporate travel, cruise transfers and more on the Central Coast.");
+  usePageMeta({
+    title: "Limousine Hire Services Central Coast NSW | Prestige Limousines",
+    description: "Wedding limousine hire, Sydney airport transfers, corporate car hire, cruise ship transfers, school formal limos & special event transport on the Central Coast NSW. Servicing Gosford, Terrigal, Wyong, Hunter Valley, Newcastle & Sydney.",
+    keywords: "wedding limousine hire central coast, airport transfer gosford sydney, corporate limo hire nsw, cruise ship transfer central coast, school formal limousine hire, hunter valley wine tour transport, stretch limo hire central coast, event transport central coast nsw",
+    canonical: "https://prestigelimousines.com.au/services",
+  });
+  useServiceSchema(
+    "Limousine Hire Services Central Coast NSW",
+    "Comprehensive luxury limousine hire services on the Central Coast NSW including wedding limos, airport transfers, corporate travel, cruise ship transfers, school formals and special events."
+  );
   return (
     <div className="min-h-screen pt-20">
       <section className="relative py-24" data-testid="section-services-hero">

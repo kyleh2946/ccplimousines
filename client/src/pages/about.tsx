@@ -18,7 +18,12 @@ const values = [
 ];
 
 export default function About() {
-  usePageMeta("About Us | Prestige Limousines", "Over 20 years of luxury transport on the Central Coast. Learn about our commitment to excellence.");
+  usePageMeta({
+    title: "About Us | Prestige Limousines Central Coast NSW",
+    description: "Over 20 years providing luxury limousine hire on the Central Coast NSW. Learn about our professional chauffeur team, our commitment to punctuality, safety and premium service across Gosford, Terrigal, Wyong and beyond.",
+    keywords: "about prestige limousines, limousine company central coast, professional chauffeur central coast nsw, luxury car hire gosford, limo service history central coast",
+    canonical: "https://prestigelimousines.com.au/about",
+  });
   return (
     <div className="min-h-screen pt-20">
       <section className="relative py-24" data-testid="section-about-hero">

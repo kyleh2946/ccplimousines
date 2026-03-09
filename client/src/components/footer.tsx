@@ -86,7 +86,7 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Prestige Limousines. All Rights Reserved.
           </p>
           <p className="text-xs text-muted-foreground">
-            Servicing Sydney, Hunter Valley, Newcastle &amp; the Central Coast
+            Luxury Limousine Hire — Servicing Gosford, Terrigal, Wyong, Sydney, Hunter Valley, Newcastle &amp; the Central Coast NSW
           </p>
         </div>
       </div>

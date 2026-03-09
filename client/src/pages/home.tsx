@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { usePageMeta } from "@/hooks/use-page-meta";
+import { useLocalBusinessSchema } from "@/components/structured-data";
 import { motion } from "framer-motion";
 import {
   CheckCircle,
@@ -96,7 +97,13 @@ const fadeUp = {
 };
 
 export default function Home() {
-  usePageMeta("Prestige Limousines | Luxury Limo Hire Central Coast", "Central Coast's premier limousine and hire car service. Weddings, corporate transfers, airport shuttles and more.");
+  usePageMeta({
+    title: "Prestige Limousines | Luxury Limo Hire Central Coast NSW",
+    description: "Central Coast's premier limousine and hire car service. Wedding limos, airport transfers, corporate travel, cruise ship transfers. Servicing Gosford, Terrigal, Wyong, Newcastle & Sydney. Over 20 years of luxury transport excellence.",
+    keywords: "limousine hire central coast, limo hire central coast nsw, wedding limousine gosford, airport transfer central coast, corporate car hire central coast, stretch limo hire nsw, luxury transport terrigal wyong, chauffeur service central coast, prestige limousines",
+    canonical: "https://prestigelimousines.com.au/",
+  });
+  useLocalBusinessSchema();
 
   return (
     <div className="min-h-screen">
