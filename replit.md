@@ -21,27 +21,38 @@ A luxury limousine hire company website for Central Coast, NSW, Australia. Featu
 
 ## Project Structure (Azure SWA Compatible)
 ```
-frontend/           ← app_location (Vite React SPA)
+frontend/              ← app_location (self-contained for Azure build)
   src/
-    pages/          - Page components
-    components/     - Shared components (navbar, footer, structured-data)
-    hooks/          - Custom hooks (use-page-meta, use-toast)
-    lib/            - Utility functions
-    components/ui/  - shadcn/ui components
-  public/           - Static assets (images, sitemap, robots.txt)
-  index.html        - Entry HTML
-  dist/             ← output_location (build output)
-api/                ← api_location (Azure Functions)
+    pages/             - Page components
+    components/        - Shared components (navbar, footer, structured-data)
+    hooks/             - Custom hooks (use-page-meta, use-toast)
+    lib/               - Utility functions
+    components/ui/     - shadcn/ui components
+  shared/
+    schema.ts          - Zod validation schemas
+  assets/              - Source images (imported via @assets alias)
+  public/              - Static assets (images, sitemap, robots.txt, staticwebapp.config.json)
+  index.html           - Entry HTML
+  vite.config.ts       - Vite config (used by Azure build)
+  tailwind.config.ts   - Tailwind config
+  postcss.config.js    - PostCSS config
+  tsconfig.json        - TypeScript config
+  package.json         - Frontend dependencies & build scripts
+  dist/                ← output_location (build output)
+api/                   ← api_location (Azure Functions)
   src/functions/
-    contact.js      - POST /api/contact → sends email via SMTP2GO
-  host.json         - Azure Functions host config
-  package.json      - Azure Functions dependencies
-shared/
-  schema.ts         - Zod validation schemas (shared between frontend & API)
-attached_assets/    - Source images (imported via @assets alias)
-vite.config.ts      - Vite configuration (root: frontend, outDir: frontend/dist)
-tailwind.config.ts  - Tailwind CSS configuration
-tsconfig.json       - TypeScript configuration
+    contact.js         - POST /api/contact → sends email via SMTP2GO
+  host.json            - Azure Functions host config
+  package.json         - Azure Functions dependencies
+```
+
+### Root-level configs (Replit dev only)
+```
+vite.config.ts         - Root Vite config (used by Replit dev server)
+tailwind.config.ts     - Root Tailwind config
+tsconfig.json          - Root TypeScript config
+shared/schema.ts       - Root shared schema (mirrored in frontend/shared/)
+attached_assets/       - Original source images (mirrored in frontend/assets/)
 ```
 
 ## Azure SWA Deployment Config
@@ -50,6 +61,13 @@ app_location: frontend
 api_location: api
 output_location: dist
 ```
+
+## Dual Config Setup
+The project has configs at two levels:
+- **Root level** (`vite.config.ts`, `tailwind.config.ts`, etc.) — used by Replit dev server (`npx vite --port 5000`)
+- **`frontend/` level** — used by Azure SWA's Oryx builder when deploying
+
+Both resolve the same aliases (`@`, `@shared`, `@assets`) but from their respective directories. The `shared/schema.ts` and image assets are duplicated in `frontend/` so Azure can build without access to root-level directories.
 
 ## API
 - `POST /api/contact` - Azure Function that validates form data and sends email via SMTP2GO
@@ -83,6 +101,7 @@ output_location: dist
 - Footer: `@assets/footer-image1.png_1772902642051.webp`
 
 ## Development
-- Run `npx vite --port 5000 --host 0.0.0.0` for local dev
-- Build: `npx vite build` → outputs to `frontend/dist/`
+- Run `npx vite --port 5000 --host 0.0.0.0` for local dev (uses root vite.config.ts)
+- Build from root: `npx vite build` → outputs to `frontend/dist/`
+- Build from frontend (Azure): `cd frontend && npx vite build` → outputs to `frontend/dist/`
 - The Vite dev server proxies `/api` requests to `http://127.0.0.1:7071` (Azure Functions local runtime)
