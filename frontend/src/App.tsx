@@ -1,4 +1,5 @@
-import { Switch, Route } from "wouter";
+import { useEffect } from "react";
+import { Switch, Route, useLocation } from "wouter";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Navbar } from "@/components/navbar";
@@ -10,6 +11,38 @@ import Fleet from "@/pages/fleet";
 import Contact from "@/pages/contact";
 import Book from "@/pages/book";
 import NotFound from "@/pages/not-found";
+
+function scrollToHash() {
+  const hash = window.location.hash;
+  if (hash) {
+    requestAnimationFrame(() => {
+      const el = document.getElementById(hash.slice(1));
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+    return true;
+  }
+  return false;
+}
+
+function ScrollToTop() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    if (!scrollToHash()) {
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
+
+  useEffect(() => {
+    const handler = () => scrollToHash();
+    window.addEventListener("hashchange", handler);
+    return () => window.removeEventListener("hashchange", handler);
+  }, []);
+
+  return null;
+}
 
 function Router() {
   return (
@@ -28,6 +61,7 @@ function Router() {
 function App() {
   return (
     <TooltipProvider>
+      <ScrollToTop />
       <div className="min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-1">

@@ -42,7 +42,7 @@ export function Footer() {
             <ul className="space-y-3">
               {["Wedding Limousines", "Airport Transfers", "Corporate Travel", "Cruise Ship Transfers", "Special Events"].map((service) => (
                 <li key={service}>
-                  <Link href="/services">
+                  <Link href={`/services#${service.toLowerCase().replace(/\s+/g, "-")}`}>
                     <span className="text-sm text-muted-foreground hover:text-primary transition-colors">
                       {service}
                     </span>

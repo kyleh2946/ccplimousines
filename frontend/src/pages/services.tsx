@@ -93,6 +93,8 @@ export default function Services() {
             {services.map((service, i) => (
               <motion.div
                 key={service.title}
+                id={service.title.toLowerCase().replace(/\s+/g, "-")}
+                className="scroll-mt-24"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
