@@ -1,0 +1,9 @@
+{
+  "name": "prestige-limousines-api",
+  "version": "1.0.0",
+  "description": "Azure Functions API for Prestige Limousines",
+  "main": "src/functions/*.js",
+  "dependencies": {
+    "@azure/functions": "^4.5.0"
+  }
+}

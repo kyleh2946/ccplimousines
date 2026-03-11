@@ -1,13 +1,12 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { insertContactInquirySchema, type InsertContactInquiry } from "@shared/schema";
+import { contactFormSchema, type ContactFormData } from "@shared/schema";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { motion } from "framer-motion";
@@ -51,23 +50,33 @@ export default function Contact() {
     canonical: "https://prestigelimousines.com.au/contact",
   });
   const { toast } = useToast();
-  const form = useForm<InsertContactInquiry>({
-    resolver: zodResolver(insertContactInquirySchema),
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const form = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
     defaultValues: { fullName: "", email: "", phone: "", message: "" },
   });
 
-  const mutation = useMutation({
-    mutationFn: async (data: InsertContactInquiry) => {
-      await apiRequest("POST", "/api/contact", data);
-    },
-    onSuccess: () => {
-      toast({ title: "Message Sent!", description: "Thank you for your enquiry. We'll be in touch shortly." });
-      form.reset();
-    },
-    onError: () => {
+  async function onSubmit(data: ContactFormData) {
+    setIsSubmitting(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const result = await res.json();
+      if (res.ok && result.success) {
+        toast({ title: "Message Sent!", description: "Thank you for your enquiry. We'll be in touch shortly." });
+        form.reset();
+      } else {
+        toast({ title: "Error", description: result.message || "Something went wrong. Please try again or call us directly.", variant: "destructive" });
+      }
+    } catch {
       toast({ title: "Error", description: "Something went wrong. Please try again or call us directly.", variant: "destructive" });
-    },
-  });
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
 
   return (
     <div className="min-h-screen pt-20">
@@ -143,7 +152,7 @@ export default function Contact() {
                 <p className="text-muted-foreground text-sm mb-8">Fill out the form below and we'll get back to you as soon as possible.</p>
 
                 <Form {...form}>
-                  <form onSubmit={form.handleSubmit((data) => mutation.mutate(data))} className="space-y-6">
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <FormField
                         control={form.control}
@@ -203,9 +212,9 @@ export default function Contact() {
                         </FormItem>
                       )}
                     />
-                    <Button type="submit" size="lg" className="w-full sm:w-auto" disabled={mutation.isPending} data-testid="button-contact-submit">
+                    <Button type="submit" size="lg" className="w-full sm:w-auto" disabled={isSubmitting} data-testid="button-contact-submit">
                       <Send className="w-4 h-4 mr-2" />
-                      {mutation.isPending ? "Sending..." : "Send Message"}
+                      {isSubmitting ? "Sending..." : "Send Message"}
                     </Button>
                   </form>
                 </Form>
