@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { usePageMeta } from "@/hooks/use-page-meta";
 
@@ -14,16 +13,6 @@ export default function Book() {
     keywords: "book limousine online central coast, limo reservation nsw, online booking limousine hire gosford, book wedding limo central coast, reserve airport transfer central coast",
     canonical: "https://prestigelimousines.com.au/book",
   });
-
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://book.mylimobiz.com/v4/widgets/widget-loader.js";
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
 
   return (
     <div className="min-h-screen pt-20">
@@ -43,17 +32,18 @@ export default function Book() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="bg-card rounded-md border border-border/50 p-6 sm:p-8 min-h-[500px]"
+            className="bg-card rounded-md border border-border/50 overflow-hidden"
             data-testid="container-booking-widget"
           >
-            <a
-              href="https://book.mylimobiz.com/v4/dcetrans"
-              data-ores-widget="website"
-              data-ores-alias="dcetrans"
-              data-testid="link-booking-widget"
-            >
-              Online Reservations
-            </a>
+            <iframe
+              src="https://book.mylimobiz.com/v4/dcetrans"
+              width="100%"
+              height="800"
+              frameBorder="0"
+              title="Online Booking"
+              data-testid="iframe-booking"
+              style={{ display: "block", minHeight: "800px" }}
+            />
           </motion.div>
         </div>
       </section>
