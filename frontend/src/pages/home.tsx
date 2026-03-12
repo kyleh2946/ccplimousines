@@ -101,7 +101,7 @@ export default function Home() {
     title: "Prestige Limousines | Luxury Limo Hire Central Coast NSW",
     description: "Central Coast's premier limousine and hire car service. Wedding limos, airport transfers, corporate travel, cruise ship transfers. Servicing Gosford, Terrigal, Wyong, Newcastle & Sydney. Over 20 years of luxury transport excellence.",
     keywords: "limousine hire central coast, limo hire central coast nsw, wedding limousine gosford, airport transfer central coast, corporate car hire central coast, stretch limo hire nsw, luxury transport terrigal wyong, chauffeur service central coast, prestige limousines",
-    canonical: "https://prestigelimousines.com.au/",
+    canonical: "https://centralcoastprestigelimousines.com.au/",
   });
   useLocalBusinessSchema();
 

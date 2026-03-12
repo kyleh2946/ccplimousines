@@ -24,7 +24,7 @@ const localBusinessSchema = {
   "@type": "LimousineBusService",
   "name": "Prestige Limousines Central Coast",
   "description": "Central Coast's premier limousine and hire car service offering wedding limos, airport transfers, corporate travel, and cruise ship transfers across the Central Coast, Sydney, Hunter Valley and Newcastle.",
-  "url": "https://prestigelimousines.com.au",
+  "url": "https://centralcoastprestigelimousines.com.au",
   "telephone": "+61417024271",
   "email": "info@prestigelimos.com.au",
   "address": {

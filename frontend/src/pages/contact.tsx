@@ -47,7 +47,7 @@ export default function Contact() {
     title: "Contact Us | Prestige Limousines Central Coast NSW",
     description: "Contact Prestige Limousines for luxury limousine hire on the Central Coast NSW. Call 0417 024 271 for a free quote. Wedding limos, airport transfers, corporate travel. Servicing Gosford, Terrigal, Wyong, Newcastle & Sydney.",
     keywords: "contact prestige limousines, limo hire quote central coast, limousine booking central coast nsw, call limousine service gosford, luxury transport enquiry central coast",
-    canonical: "https://prestigelimousines.com.au/contact",
+    canonical: "https://centralcoastprestigelimousines.com.au/contact",
   });
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);

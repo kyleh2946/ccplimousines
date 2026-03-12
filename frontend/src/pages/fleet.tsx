@@ -59,7 +59,7 @@ export default function Fleet() {
     title: "Our Fleet | Luxury Limousines & Sedans Central Coast NSW",
     description: "Browse our fleet of luxury vehicles for hire on the Central Coast NSW. Mercedes-Benz E250 sedan, BA Falcon stretch limousine, Chrysler 300C 10-seat stretch limo, and VW Multivan people mover. Perfect for weddings, formals, airport transfers & corporate travel.",
     keywords: "mercedes benz e250 hire central coast, stretch limousine hire nsw, chrysler 300c limo central coast, vw multivan hire gosford, luxury fleet central coast, wedding car hire terrigal, limo fleet nsw",
-    canonical: "https://prestigelimousines.com.au/fleet",
+    canonical: "https://centralcoastprestigelimousines.com.au/fleet",
   });
   return (
     <div className="min-h-screen pt-20">

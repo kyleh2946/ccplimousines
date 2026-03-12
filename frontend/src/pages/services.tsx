@@ -61,7 +61,7 @@ export default function Services() {
     title: "Limousine Hire Services Central Coast NSW | Prestige Limousines",
     description: "Wedding limousine hire, Sydney airport transfers, corporate car hire, cruise ship transfers, school formal limos & special event transport on the Central Coast NSW. Servicing Gosford, Terrigal, Wyong, Hunter Valley, Newcastle & Sydney.",
     keywords: "wedding limousine hire central coast, airport transfer gosford sydney, corporate limo hire nsw, cruise ship transfer central coast, school formal limousine hire, hunter valley wine tour transport, stretch limo hire central coast, event transport central coast nsw",
-    canonical: "https://prestigelimousines.com.au/services",
+    canonical: "https://centralcoastprestigelimousines.com.au/services",
   });
   useServiceSchema(
     "Limousine Hire Services Central Coast NSW",
