@@ -21,7 +21,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    lines: ["0417 024 271", "4388 6065"],
+    lines: ["0417 024 271"],
     href: "tel:0417024271",
   },
   {
