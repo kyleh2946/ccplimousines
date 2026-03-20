@@ -11,6 +11,7 @@ import { useToast } from "@/hooks/use-toast";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
+import chauffeurHeroImg from "@assets/generated_images/chauffeur-hero.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -82,7 +83,7 @@ export default function Contact() {
     <div className="min-h-screen pt-20">
       <section className="relative py-24" data-testid="section-contact-hero">
         <div className="absolute inset-0">
-          <img src="/images/chauffeur.jpg" alt="Contact us" className="w-full h-full object-cover" />
+          <img src={chauffeurHeroImg} alt="Professional chauffeur service" className="w-full h-full object-cover" />
           <div className="hero-overlay absolute inset-0" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

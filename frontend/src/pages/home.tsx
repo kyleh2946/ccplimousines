@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import bmwFleetImg from "@assets/generated_images/bmw-7series-fleet.png";
-import mercedesImg from "@assets/mercedes-benz-e250_1773074645042.jpg";
+import mercedesImg from "@assets/generated_images/mercedes-e250-fleet.png";
 import luxurySedanNightImg from "@assets/generated_images/luxury-sedan-night.png";
 import vwMultivanImg from "@assets/VW-multivan.jpg_1773074645048.webp";
 import heroBannerImg from "@assets/generated_images/hero-banner.png";

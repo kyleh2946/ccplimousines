@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import { ArrowRight, Users, Snowflake, Wifi, Music, Shield, Star } from "lucide-react";
 import { usePageMeta } from "@/hooks/use-page-meta";
-import mercedesImg from "@assets/mercedes-benz-e250_1773074645042.jpg";
+import mercedesImg from "@assets/generated_images/mercedes-e250-fleet.png";
 import bmwFleetImg from "@assets/generated_images/bmw-7series-fleet.png";
 import luxurySedanNightImg from "@assets/generated_images/luxury-sedan-night.png";
 import vwMultivanImg from "@assets/VW-multivan.jpg_1773074645048.webp";

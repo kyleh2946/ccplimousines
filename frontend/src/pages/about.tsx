@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { ArrowRight, Shield, Clock, Award, Star, Heart, Users, ThumbsUp } from "lucide-react";
 import { usePageMeta } from "@/hooks/use-page-meta";
+import chauffeurHeroImg from "@assets/generated_images/chauffeur-hero.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -28,7 +29,7 @@ export default function About() {
     <div className="min-h-screen pt-20">
       <section className="relative py-24" data-testid="section-about-hero">
         <div className="absolute inset-0">
-          <img src="/images/chauffeur.jpg" alt="Professional chauffeur" className="w-full h-full object-cover" />
+          <img src={chauffeurHeroImg} alt="Professional chauffeur with luxury vehicle" className="w-full h-full object-cover" />
           <div className="hero-overlay absolute inset-0" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
