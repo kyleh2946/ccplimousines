@@ -78,8 +78,12 @@ Both resolve the same aliases (`@`, `@shared`, `@assets`) but from their respect
 - `MAIL_FROM` - Sender email address
 
 ## Theme
-- Dark background (hsl(30 10% 6%)), gold primary (hsl(43 74% 49%))
-- Fonts: Montserrat (body), Playfair Display (headings)
+- True black background (hsl(0 0% 4%)), vivid amber-gold primary (hsl(43 85% 50%))
+- Cinematic, high-end feel inspired by burbankhirecars.com.au
+- Navbar: transparent over hero, becomes solid black on scroll
+- Hero: full-viewport height, centered layout, large italic serif heading, two CTA buttons
+- Gold divider lines between section headings and content
+- Fonts: Montserrat (body), Playfair Display (serif/headings)
 - All pages use consistent layout with Navbar + Footer
 
 ## Booking Integration

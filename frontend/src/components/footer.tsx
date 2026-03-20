@@ -4,7 +4,7 @@ import footerLogo from "@assets/footer-image1.png_1772902642051.webp";
 
 export function Footer() {
   return (
-    <footer className="bg-card border-t border-border/50">
+    <footer className="bg-black border-t border-white/[0.07]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
@@ -17,7 +17,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-serif text-lg font-semibold mb-6 text-foreground" data-testid="text-footer-links">Quick Links</h3>
+            <h3 className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-white mb-6" data-testid="text-footer-links">Quick Links</h3>
             <ul className="space-y-3">
               {[
                 { label: "Home", href: "/" },
@@ -28,7 +28,7 @@ export function Footer() {
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href}>
-                    <span className="text-sm text-muted-foreground hover:text-primary transition-colors" data-testid={`link-footer-${link.label.toLowerCase().replace(/\s/g, '-')}`}>
+                    <span className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200" data-testid={`link-footer-${link.label.toLowerCase().replace(/\s/g, '-')}`}>
                       {link.label}
                     </span>
                   </Link>
@@ -38,12 +38,12 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-serif text-lg font-semibold mb-6 text-foreground">Services</h3>
+            <h3 className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-white mb-6">Services</h3>
             <ul className="space-y-3">
               {["Wedding Limousines", "Airport Transfers", "Corporate Travel", "Cruise Ship Transfers", "Special Events"].map((service) => (
                 <li key={service}>
                   <Link href={`/services#${service.toLowerCase().replace(/\s+/g, "-")}`}>
-                    <span className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    <span className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
                       {service}
                     </span>
                   </Link>
@@ -53,17 +53,15 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-serif text-lg font-semibold mb-6 text-foreground">Contact Info</h3>
+            <h3 className="font-sans text-xs font-semibold tracking-[0.2em] uppercase text-white mb-6">Contact Info</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                <div>
-                  <a href="tel:0417024271" className="text-sm text-muted-foreground hover:text-primary transition-colors">0417 024 271</a>
-                </div>
+                <a href="tel:0417024271" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200">0417 024 271</a>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                <a href="mailto:info@prestigelimos.com.au" className="text-sm text-muted-foreground hover:text-primary transition-colors">info@prestigelimos.com.au</a>
+                <a href="mailto:info@prestigelimos.com.au" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200 break-all">info@prestigelimos.com.au</a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
@@ -78,13 +76,13 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-border/50">
+      <div className="border-t border-white/[0.05]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground" data-testid="text-copyright">
             &copy; {new Date().getFullYear()} Prestige Limousines. All Rights Reserved.
           </p>
-          <p className="text-xs text-muted-foreground">
-            Luxury Limousine Hire — Servicing Gosford, Terrigal, Wyong, Sydney, Hunter Valley, Newcastle &amp; the Central Coast NSW
+          <p className="text-xs text-muted-foreground text-center sm:text-right">
+            Luxury Limousine Hire — Gosford, Terrigal, Wyong, Sydney, Hunter Valley, Newcastle &amp; Central Coast NSW
           </p>
         </div>
       </div>
