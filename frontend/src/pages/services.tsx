@@ -43,14 +43,14 @@ const services = [
   {
     icon: PartyPopper,
     title: "Special Events",
-    description: "From concert nights to milestone birthdays, our special event transport adds an extra layer of luxury to your celebration. Arrive in a stunning limousine and make every event a grand occasion.",
-    features: ["Stretch limo available", "Custom routes", "Multi-stop trips", "Late night service"],
+    description: "From concert nights to milestone birthdays, our special event transport adds an extra layer of luxury to your celebration. Arrive in a stunning private chauffeur vehicle and make every event a grand occasion.",
+    features: ["Premium vehicles", "Custom routes", "Multi-stop trips", "Late night service"],
     image: "/images/fleet-stretch.jpg",
   },
   {
     icon: GraduationCap,
     title: "School Formals",
-    description: "Give your teenager the school formal experience they'll never forget. Our formal packages include stylish stretch limousines that accommodate groups of friends for an exciting and safe night.",
+    description: "Give your teenager the school formal experience they'll never forget. Our formal packages include stylish luxury vehicles that ensure a grand, memorable entrance and a safe, exciting night.",
     features: ["Group packages", "Photo opportunity stops", "Parent peace of mind", "Safe, licensed vehicles"],
     image: "/images/fleet-suv.jpg",
   },
@@ -60,7 +60,7 @@ export default function Services() {
   usePageMeta({
     title: "Limousine Hire Services Central Coast NSW | Prestige Limousines",
     description: "Wedding limousine hire, Sydney airport transfers, corporate car hire, cruise ship transfers, school formal limos & special event transport on the Central Coast NSW. Servicing Gosford, Terrigal, Wyong, Hunter Valley, Newcastle & Sydney.",
-    keywords: "wedding limousine hire central coast, airport transfer gosford sydney, corporate limo hire nsw, cruise ship transfer central coast, school formal limousine hire, hunter valley wine tour transport, stretch limo hire central coast, event transport central coast nsw",
+    keywords: "wedding car hire central coast, airport transfer gosford sydney, corporate chauffeur central coast nsw, cruise ship transfer central coast, school formal car hire, hunter valley wine tour transport, private driver central coast, event transport central coast nsw",
     canonical: "https://centralcoastprestigelimousines.com.au/services",
   });
   useServiceSchema(

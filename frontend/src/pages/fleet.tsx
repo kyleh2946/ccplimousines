@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 import { ArrowRight, Users, Snowflake, Wifi, Music, Shield, Star } from "lucide-react";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import mercedesImg from "@assets/mercedes-benz-e250_1773074645042.jpg";
-import stretchLimoImg from "@assets/stretch-limo-ba-falcon.jpg_1773074645046.webp";
+import bmwFleetImg from "@assets/generated_images/bmw-7series-fleet.png";
+import luxurySedanNightImg from "@assets/generated_images/luxury-sedan-night.png";
 import vwMultivanImg from "@assets/VW-multivan.jpg_1773074645048.webp";
-import chryslerImg from "@assets/Chrysler-10-Seat_1773074645049.jpg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -20,35 +20,26 @@ const vehicles = [
     name: "Mercedes-Benz E250",
     category: "Luxury Sedan",
     image: mercedesImg,
-    capacity: "1-3 Passengers",
-    description: "The ultimate in executive comfort. Our Mercedes-Benz E250 features a premium leather interior, climate control, and a whisper-quiet ride perfect for corporate transfers and airport runs.",
+    capacity: "1–3 Passengers",
+    description: "The ultimate in executive comfort. Our Mercedes-Benz E250 features a premium leather interior, dual-zone climate control, and a whisper-quiet ride — perfect for corporate transfers, airport runs, and special occasions.",
     features: ["Leather Interior", "Climate Control", "USB Charging", "Tinted Windows"],
-    ideal: ["Corporate Travel", "Airport Transfers", "Date Night"],
+    ideal: ["Corporate Travel", "Airport Transfers", "Date Night", "Special Events"],
   },
   {
-    name: "BA Falcon Stretch Limousine",
-    category: "Stretch Limousine",
-    image: stretchLimoImg,
-    capacity: "6-10 Passengers",
-    description: "Make a grand entrance with our stunning white stretch limousine. Featuring a spacious interior with ambient lighting, premium sound system, and a bar area — perfect for turning every journey into an unforgettable event.",
-    features: ["Bar Area", "Ambient Lighting", "Premium Sound", "Privacy Partition"],
-    ideal: ["Weddings", "School Formals", "Parties", "Special Events"],
-  },
-  {
-    name: "Chrysler 300C 10-Seat Stretch",
-    category: "Stretch Limousine",
-    image: chryslerImg,
-    capacity: "Up to 10 Passengers",
-    description: "Our showpiece Chrysler 300C stretch limousine combines bold styling with opulent comfort. With seating for up to 10 passengers, chrome detailing, and a fully appointed interior, this is the ultimate vehicle for making a statement.",
-    features: ["Chrome Detailing", "Ambient Lighting", "Premium Sound", "Bar Area"],
-    ideal: ["Weddings", "Formals", "Parties", "VIP Events"],
+    name: "BMW 7 Series",
+    category: "Executive Saloon",
+    image: bmwFleetImg,
+    capacity: "1–3 Passengers",
+    description: "Our flagship BMW 7 Series delivers an unrivalled blend of performance and luxury. With its commanding presence, massaging rear seats, and cutting-edge technology, every journey becomes a first-class experience.",
+    features: ["Massage Rear Seats", "Ambient Lighting", "Panoramic Roof", "Premium Sound"],
+    ideal: ["VIP Transfers", "Corporate Travel", "Airport Runs", "Special Occasions"],
   },
   {
     name: "Volkswagen Multivan",
     category: "Premium People Mover",
     image: vwMultivanImg,
     capacity: "Up to 7 Passengers",
-    description: "Versatile luxury for group travel. Our Volkswagen Multivan offers spacious seating, a refined ride, and generous luggage room — ideal for airport transfers, corporate groups, or wine tours through the Hunter Valley.",
+    description: "Versatile luxury for group travel. Our Volkswagen Multivan offers spacious seating, a refined ride, and generous luggage room — ideal for airport transfers, corporate groups, or Hunter Valley wine tours.",
     features: ["Spacious Cabin", "Climate Control", "Generous Luggage Space", "Sliding Doors"],
     ideal: ["Airport Transfers", "Group Travel", "Hunter Valley Tours", "Cruise Transfers"],
   },
@@ -56,26 +47,26 @@ const vehicles = [
 
 export default function Fleet() {
   usePageMeta({
-    title: "Our Fleet | Luxury Limousines & Sedans Central Coast NSW",
-    description: "Browse our fleet of luxury vehicles for hire on the Central Coast NSW. Mercedes-Benz E250 sedan, BA Falcon stretch limousine, Chrysler 300C 10-seat stretch limo, and VW Multivan people mover. Perfect for weddings, formals, airport transfers & corporate travel.",
-    keywords: "mercedes benz e250 hire central coast, stretch limousine hire nsw, chrysler 300c limo central coast, vw multivan hire gosford, luxury fleet central coast, wedding car hire terrigal, limo fleet nsw",
+    title: "Our Fleet | Luxury Chauffeur Vehicles Central Coast NSW",
+    description: "Browse our premium chauffeur fleet on the Central Coast NSW. Mercedes-Benz E250, BMW 7 Series executive saloon, and VW Multivan people mover. Perfect for corporate travel, airport transfers, weddings and special events.",
+    keywords: "luxury chauffeur car central coast, mercedes benz hire central coast, bmw 7 series chauffeur nsw, vw multivan hire gosford, private driver central coast, executive car hire terrigal, premium transport central coast nsw",
     canonical: "https://centralcoastprestigelimousines.com.au/fleet",
   });
   return (
     <div className="min-h-screen pt-20">
       <section className="relative py-24" data-testid="section-fleet-hero">
         <div className="absolute inset-0">
-          <img src={chryslerImg} alt="Luxury fleet" className="w-full h-full object-cover" />
+          <img src={luxurySedanNightImg} alt="Luxury chauffeur vehicle at night" className="w-full h-full object-cover" />
           <div className="hero-overlay absolute inset-0" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial="hidden" animate="visible" variants={fadeUp}>
-            <p className="text-primary font-medium tracking-[0.2em] uppercase text-sm mb-3">Our Fleet</p>
+            <p className="text-primary font-medium tracking-[0.25em] uppercase text-xs mb-4">Our Fleet</p>
             <h1 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-6" data-testid="text-fleet-page-title">
               A Vehicle for Every <span className="gold-text">Occasion</span>
             </h1>
             <p className="text-white/70 max-w-2xl text-lg leading-relaxed">
-              Our diverse fleet caters to any event, ensuring your transportation needs are always met with style and sophistication.
+              Our premium fleet of luxury vehicles ensures every journey is delivered with the highest standard of comfort, style and professionalism.
             </p>
           </motion.div>
         </div>
@@ -93,28 +84,29 @@ export default function Fleet() {
                 transition={{ delay: 0.1 }}
                 variants={fadeUp}
               >
-                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-10 items-center`}>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                   <div className={i % 2 === 1 ? "lg:order-2" : ""}>
-                    <div className="relative rounded-md overflow-hidden">
+                    <div className="relative rounded-sm overflow-hidden border border-white/[0.07]">
                       <img
                         src={vehicle.image}
                         alt={vehicle.name}
                         className="w-full h-[350px] object-cover"
                       />
                       <div className="absolute top-4 left-4">
-                        <Badge variant="secondary" className="bg-background/80 backdrop-blur-sm text-foreground">
+                        <Badge variant="secondary" className="bg-black/70 backdrop-blur-sm text-white border-white/10">
                           {vehicle.capacity}
                         </Badge>
                       </div>
                     </div>
                   </div>
                   <div className={i % 2 === 1 ? "lg:order-1" : ""}>
-                    <Badge variant="outline" className="mb-3 text-primary border-primary/30">{vehicle.category}</Badge>
+                    <Badge variant="outline" className="mb-3 text-primary border-primary/30 text-xs tracking-[0.12em] uppercase">{vehicle.category}</Badge>
                     <h2 className="font-serif text-3xl font-bold text-foreground mb-4" data-testid={`text-vehicle-name-${i}`}>{vehicle.name}</h2>
-                    <p className="text-muted-foreground leading-relaxed mb-6">{vehicle.description}</p>
+                    <div className="gold-divider max-w-[80px] mb-6" />
+                    <p className="text-muted-foreground leading-relaxed mb-6 text-sm">{vehicle.description}</p>
 
                     <div className="mb-6">
-                      <h4 className="text-sm font-semibold text-foreground mb-3 uppercase tracking-wider">Features</h4>
+                      <h4 className="text-xs font-semibold text-foreground mb-3 uppercase tracking-[0.15em]">Features</h4>
                       <div className="flex flex-wrap gap-2">
                         {vehicle.features.map((feature) => (
                           <Badge key={feature} variant="secondary" className="text-xs">{feature}</Badge>
@@ -123,7 +115,7 @@ export default function Fleet() {
                     </div>
 
                     <div className="mb-8">
-                      <h4 className="text-sm font-semibold text-foreground mb-3 uppercase tracking-wider">Ideal For</h4>
+                      <h4 className="text-xs font-semibold text-foreground mb-3 uppercase tracking-[0.15em]">Ideal For</h4>
                       <div className="flex flex-wrap gap-2">
                         {vehicle.ideal.map((use) => (
                           <Badge key={use} variant="outline" className="text-xs text-primary border-primary/30">{use}</Badge>
@@ -132,7 +124,10 @@ export default function Fleet() {
                     </div>
 
                     <Link href="/book">
-                      <Button data-testid={`button-enquire-vehicle-${i}`}>
+                      <Button
+                        data-testid={`button-enquire-vehicle-${i}`}
+                        className="bg-primary hover:bg-primary/90 text-black font-semibold tracking-[0.08em] uppercase text-xs"
+                      >
                         Book This Vehicle
                         <ArrowRight className="w-4 h-4 ml-2" />
                       </Button>
@@ -145,12 +140,13 @@ export default function Fleet() {
         </div>
       </section>
 
-      <section className="py-24 bg-card border-y border-border/30" data-testid="section-fleet-standards">
+      <section className="py-24 bg-card border-y border-white/[0.06]" data-testid="section-fleet-standards">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-16">
-            <p className="text-primary font-medium tracking-[0.2em] uppercase text-sm mb-3">Our Standards</p>
+            <p className="text-primary font-medium tracking-[0.25em] uppercase text-xs mb-4">Our Standards</p>
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-4">Every Vehicle, Every Time</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">All vehicles in our fleet are maintained to exacting standards.</p>
+            <div className="gold-divider max-w-xs mx-auto mt-6" />
+            <p className="text-muted-foreground max-w-2xl mx-auto mt-6 text-sm">All vehicles in our fleet are maintained to exacting standards.</p>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -170,12 +166,12 @@ export default function Fleet() {
                 transition={{ delay: i * 0.05 }}
                 variants={fadeUp}
               >
-                <Card className="p-6 text-center h-full" data-testid={`card-standard-${i}`}>
-                  <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                    <standard.icon className="w-6 h-6 text-primary" />
+                <Card className="p-6 text-center h-full border-white/[0.07] hover:border-primary/20 transition-colors duration-300" data-testid={`card-standard-${i}`}>
+                  <div className="w-11 h-11 rounded-sm bg-primary/10 border border-primary/15 flex items-center justify-center mx-auto mb-4">
+                    <standard.icon className="w-5 h-5 text-primary" />
                   </div>
-                  <h3 className="font-semibold text-foreground mb-2">{standard.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{standard.desc}</p>
+                  <h3 className="font-semibold text-foreground mb-2 text-sm">{standard.title}</h3>
+                  <p className="text-muted-foreground text-xs leading-relaxed">{standard.desc}</p>
                 </Card>
               </motion.div>
             ))}
@@ -183,22 +179,31 @@ export default function Fleet() {
         </div>
       </section>
 
-      <section className="py-24" data-testid="section-fleet-cta">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-28 relative" data-testid="section-fleet-cta">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(43_85%_50%_/_0.06)_0%,_transparent_70%)]" />
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-6">Ready to Choose Your Ride?</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto mb-10">
+            <p className="text-primary font-medium tracking-[0.25em] uppercase text-xs mb-4">Ready to Ride?</p>
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-4">Choose Your Vehicle</h2>
+            <div className="gold-divider max-w-[100px] mx-auto mb-8" />
+            <p className="text-muted-foreground max-w-xl mx-auto mb-10 text-sm leading-relaxed">
               Contact us to discuss your requirements and we'll help you select the perfect vehicle for your occasion.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/book">
-                <Button data-testid="button-fleet-contact">
+                <Button
+                  data-testid="button-fleet-contact"
+                  className="bg-primary hover:bg-primary/90 text-black font-semibold tracking-[0.08em] uppercase text-sm px-8 h-12"
+                >
                   Book Now
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </Link>
               <a href="tel:0417024271">
-                <Button variant="outline">
+                <Button
+                  variant="outline"
+                  className="border-white/20 text-white hover:bg-white/5 hover:border-white/40 tracking-[0.08em] uppercase text-sm px-8 h-12"
+                >
                   Call 0417 024 271
                 </Button>
               </a>

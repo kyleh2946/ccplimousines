@@ -18,9 +18,9 @@ import {
   ChevronDown,
 } from "lucide-react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import chryslerImg from "@assets/Chrysler-10-Seat_1773074645049.jpg";
+import bmwFleetImg from "@assets/generated_images/bmw-7series-fleet.png";
 import mercedesImg from "@assets/mercedes-benz-e250_1773074645042.jpg";
-import stretchLimoImg from "@assets/stretch-limo-ba-falcon.jpg_1773074645046.webp";
+import luxurySedanNightImg from "@assets/generated_images/luxury-sedan-night.png";
 import vwMultivanImg from "@assets/VW-multivan.jpg_1773074645048.webp";
 import heroBannerImg from "@assets/generated_images/hero-banner.png";
 import serviceWeddingImg from "@assets/generated_images/service-wedding.png";
@@ -92,7 +92,7 @@ export default function Home() {
   usePageMeta({
     title: "Prestige Limousines | Luxury Limo Hire Central Coast NSW",
     description: "Central Coast's premier limousine and hire car service. Wedding limos, airport transfers, corporate travel, cruise ship transfers. Servicing Gosford, Terrigal, Wyong, Newcastle & Sydney. Over 20 years of luxury transport excellence.",
-    keywords: "limousine hire central coast, limo hire central coast nsw, wedding limousine gosford, airport transfer central coast, corporate car hire central coast, stretch limo hire nsw, luxury transport terrigal wyong, chauffeur service central coast, prestige limousines",
+    keywords: "chauffeur service central coast, luxury car hire central coast nsw, private driver central coast, wedding car hire gosford, airport transfer central coast, corporate car hire central coast, luxury transport terrigal wyong, prestige limousines central coast",
     canonical: "https://centralcoastprestigelimousines.com.au/",
   });
   useLocalBusinessSchema();
@@ -255,7 +255,7 @@ export default function Home() {
       {/* ── WHY CHOOSE US ── */}
       <section className="relative py-28" data-testid="section-about-preview">
         <div className="absolute inset-0">
-          <img src={stretchLimoImg} alt="BA Falcon Stretch Limousine" className="w-full h-full object-cover" />
+          <img src={luxurySedanNightImg} alt="Luxury chauffeur sedan at night" className="w-full h-full object-cover" />
           <div className="section-overlay absolute inset-0" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -326,7 +326,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { name: "Mercedes-Benz E250", desc: "Luxury Sedan", image: mercedesImg, capacity: "1–3 passengers" },
-              { name: "Chrysler 300C Stretch", desc: "10-Seat Limousine", image: chryslerImg, capacity: "Up to 10 passengers" },
+              { name: "BMW 7 Series", desc: "Executive Saloon", image: bmwFleetImg, capacity: "1–3 passengers" },
               { name: "VW Multivan", desc: "Premium People Mover", image: vwMultivanImg, capacity: "Up to 7 passengers" },
             ].map((vehicle, i) => (
               <motion.div

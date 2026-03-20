@@ -58,7 +58,7 @@ export default function About() {
                   What started as a small operation has grown into the region's most trusted luxury transport service, catering to both the corporate and public sectors. We service the entire Central Coast region, travelling to any destination of your choice.
                 </p>
                 <p>
-                  Our fleet has expanded to accommodate every taste and occasion, from elegant sedans to luxurious stretch limousines. International and interstate visitors, as well as local residents of the Central Coast, Hunter Valley and Newcastle region, trust us for their most important journeys.
+                  Our fleet has expanded to accommodate every taste and occasion, from elegant executive sedans to spacious people movers. International and interstate visitors, as well as local residents of the Central Coast, Hunter Valley and Newcastle region, trust us for their most important journeys.
                 </p>
                 <p>
                   At Prestige Limousines, we don't just offer a ride &mdash; we deliver a bespoke travel experience. Tell us your preferences, and watch us tailor everything from the route to the in-car atmosphere.
